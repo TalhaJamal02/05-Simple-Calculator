@@ -66,7 +66,7 @@ export default function Calculator() {
             value={num1}
             onChange={(e) => setNum1(e.target.value)}
             placeholder="Enter a number"
-            className="mt-2 outline-none border border-gray-500 rounded-md"
+            className="mt-2 outline-none border border-gray-500 rounded-lg"
             inputMode='numeric'
           />
         </div>
@@ -77,7 +77,7 @@ export default function Calculator() {
             value={num2}
             onChange={(e) => setNum2(e.target.value)}
             placeholder="Enter a number"
-            className="mt-2 outline-none border border-gray-500 rounded-md"
+            className="mt-2 outline-none border border-gray-500 rounded-lg"
             inputMode='numeric'
           />
         </div>
@@ -103,12 +103,12 @@ export default function Calculator() {
           readOnly
           value={result.toString()}
           placeholder="Result"
-          className="mt-2 outline-none border border-gray-500 rounded-md"
+          className="mt-2 outline-none border border-gray-500 rounded-lg"
         />
       </div>
   
       {/* Clear Button */}
-      <Button onClick={handleClear} className="w-full mt-4 rounded-md">
+      <Button onClick={handleClear} className="w-full mt-4 rounded-lg">
         Clear
       </Button>
     </Card>
