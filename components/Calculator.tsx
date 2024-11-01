@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -66,6 +66,7 @@ export default function Calculator() {
             onChange={(e) => setNum1(e.target.value)}
             placeholder="Enter a number"
             className="mt-2"
+            inputMode='numeric'
           />
         </div>
 
@@ -78,6 +79,7 @@ export default function Calculator() {
             onChange={(e) => setNum2(e.target.value)}
             placeholder="Enter a number"
             className="mt-2"
+            inputMode='numeric'
           />
         </div>
 
