@@ -52,61 +52,67 @@ export default function Calculator() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900 text-white">
-      <Card className="p-8 shadow-lg max-w-sm w-full">
-        {/* Calculator Title */}
-        <h2 className="text-2xl font-bold mb-4">Simple Calculator</h2>
+    <div className="flex justify-center items-center h-screen bg-gradient-to-tr from-gray-500 to-gray-900 text-white">
+    <Card className="p-8 shadow-lg max-w-sm w-full  rounded-lg">
 
-        {/* Input for Number 1 */}
-        <div className="mb-4">
-          <Label>Number 1</Label>
+      <h2 className="text-3xl font-bold mb-4 text-center text-black">Simple Calculator</h2>
+  
+      {/* Input Fields */}
+      <div className="flex mb-4">
+        <div className="mr-2 w-full ">
+          <Label className="font-medium text-sm">Number 1</Label>
           <Input
             type="number"
             value={num1}
             onChange={(e) => setNum1(e.target.value)}
             placeholder="Enter a number"
-            className="mt-2"
+            className="mt-2 outline-none border border-gray-500 rounded-md"
             inputMode='numeric'
           />
         </div>
-
-        {/* Input for Number 2 */}
-        <div className="mb-4">
-          <Label>Number 2</Label>
+        <div className="ml-2 w-full">
+          <Label className="font-medium text-sm">Number 2</Label>
           <Input
             type="number"
             value={num2}
             onChange={(e) => setNum2(e.target.value)}
             placeholder="Enter a number"
-            className="mt-2"
+            className="mt-2 outline-none border border-gray-500 rounded-md"
             inputMode='numeric'
           />
         </div>
-
-        {/* Operation Buttons */}
-        <div className="flex justify-between mb-4">
-          <Button onClick={() => handleCalculate('+')}>+</Button>
-          <Button onClick={() => handleCalculate('-')}>-</Button>
-          <Button onClick={() => handleCalculate('*')}>*</Button>
-          <Button onClick={() => handleCalculate('/')}>/</Button>
-        </div>
-
-        {/* Display Result */}
-        <div className="mb-4">
-          <Label>Result</Label>
-          <Input
-            readOnly
-            value={result.toString()}
-            placeholder="Result"
-            className="mt-2"
-          />
-        </div>
-
-        {/* Clear Button */}
-        <Button onClick={handleClear} className="w-full mt-4">
-          Clear
-        </Button>
-      </Card>
-    </div>
+      </div>
+  
+      {/* Operation Buttons */}
+      <div className="flex justify-between mb-4 ">
+        {['+', '-', '*', '/'].map((operation) => (
+          <Button
+            key={operation}
+            onClick={() => handleCalculate(operation)}
+            className="flex-1 mx-1 rounded-lg text-lg"
+          >
+            {operation}
+          </Button>
+        ))}
+      </div>
+  
+      {/* Display Result */}
+      <div className="mb-4">
+        <Label className="font-medium text-sm">Result</Label>
+        <Input
+          readOnly
+          value={result.toString()}
+          placeholder="Result"
+          className="mt-2 outline-none border border-gray-500 rounded-md"
+        />
+      </div>
+  
+      {/* Clear Button */}
+      <Button onClick={handleClear} className="w-full mt-4 rounded-md">
+        Clear
+      </Button>
+    </Card>
+  </div>
+  
   );
 }
